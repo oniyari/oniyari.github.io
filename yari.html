@@ -1,7 +1,133 @@
 <html>
 
-<body>
-    WELCOMEEEEEE TO PEAKY SITE
+<head>
+    <style>
+        button {
+            padding: 10px;
+            background-color: red;
+            color: white;
+            font-weight: bold;
+        }
+
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Roboto Condensed', sans-serif;
+
+        }
+
+        table {
+            margin-left: auto;
+            margin-right: auto;
+            width: 60%;
+        }
+
+        #due {
+            margin-top: 20%;
+        }
+
+        tr {
+            width: 25%
+        }
+
+        td {
+
+            text-align: center;
+        }
+
+        .a {
+            font-size: 45px;
+            color: red;
+        }
+
+        .b {
+            font-size: 20px;
+        }
+    </style>
+    <script>
+        var countDownDate = new Date("Oct 1, 2021 00:00:00").getTime();
+
+        var audio = null;
+
+        var myfunc = setInterval(function () {
+
+
+            var myaudio = setInterval(function () {
+                audio.play();
+            }, 1000)
+            var now = new Date().getTime();
+            var timeleft = countDownDate - now;
+
+            var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerHTML = days
+            document.getElementById("hours").innerHTML = hours
+            document.getElementById("mins").innerHTML = minutes
+            document.getElementById("secs").innerHTML = seconds
+
+
+            if (timeleft < 0) {
+                audio = null;
+                clearInterval(myfunc);
+                document.getElementById("days").innerHTML = ""
+                document.getElementById("hours").innerHTML = ""
+                document.getElementById("mins").innerHTML = ""
+                document.getElementById("secs").innerHTML = ""
+                document.getElementById("end").innerHTML = "TIME UP!!";
+            }
+        }, 1000)
+
+        function mostra() {
+            audio = new Audio('clocco.mp3');
+            document.getElementById("due").style = "display:none";
+            document.getElementById("foto").style = "";
+            document.getElementById("uno").style = "";
+        }
+    </script>
+</head>
+
+<body data-new-gr-c-s-loaded="9.34.0">
+    <center> <h1 style='color:red'>KYOTO</h1></center>
+    <table id="foto" style="display:none">
+        <tbody>
+            <tr>
+                <td>
+                    <img src="kyoto.jpg">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table id="uno" style="display:none">
+        <tbody>
+            <tr>
+                <td class="a" id="days"></td>
+                <td class="a" id="hours"></td>
+                <td class="a" id="mins"></td>
+                <td class="a" id="secs"></td>
+            </tr>
+            <tr>
+                <td class="b">DAYS</td>
+                <td class="b">HOURS</td>
+                <td class="b">MINUTES</td>
+                <td class="b">SECONDS</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table id="due">
+        <tbody>
+            <tr>
+                <td class="b">
+                    <button id="botto" onclick="mostra()">CLICK</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
 </body>
 
 </html>
