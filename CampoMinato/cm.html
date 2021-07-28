@@ -1,0 +1,59 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="cm.js"></script>
+<style>
+table
+{	
+	border-collapse: collapse;
+	border: 1px solid black;	
+}
+tr{
+	height: 25px;	
+}
+
+td{
+	width: 25px;	
+	border: 1px solid black;	
+}
+
+.displayed 
+{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom:auto;
+	margin-top: auto;
+}
+
+</style>
+
+
+<div ng-app="campominato" ng-controller="Controller">
+	
+	<form>
+	<input type="number" ng-model="righe" placeholder="righe"/>
+	<input type="number" ng-model="colonne"  ng-change="cambiagriglia()" placeholder="colonne"/>
+	<input type="number" ng-model="nbombe" placeholder="colonne"/>
+	<button ng-click="visualizza=true;gioca()"> Nuova Partita </button>
+	</form>
+	<div ng-show="visualizza">
+	<center>
+	<br>
+	<br>
+		<button ng-click="mostrabombe()">Mostra Bombe</button>
+		<br>
+		<br>
+		<table>
+			<tr ng-repeat="mini in griglia">
+				<td  ng-repeat="c in mini" ng-click="clicca(c)" ng-right-click="bandiera(c)">	
+						<center>
+								<img class="displayed" style="width:20;height:auto;border-collapse:collapse;" src = "{{c.mostra}}.png">
+						</center>
+				</td>
+			</tr>
+		</table>
+		<br>
+		<p id="perso"></p>
+	</center>
+	</div>
+</div>

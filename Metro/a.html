@@ -1,0 +1,17 @@
+<select id="test">
+</select>
+
+<script>
+	var v= ["a", "b", "c"];
+	var lista = document.getElementById("test");
+	
+	for(var i=0;i<v.length;i++)
+	{
+		var x = document.createElement("option");
+		x.text = v[i];
+		x.value = v[i];
+		lista.options.add(x);
+		
+	}
+
+</script>

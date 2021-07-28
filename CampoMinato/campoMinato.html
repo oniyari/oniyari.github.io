@@ -1,0 +1,52 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="campominato.js"></script>
+<style>
+table
+{	
+	border-collapse: collapse;
+	border: 1px solid black;	
+}
+tr{
+	height: 25px;	
+}
+
+td{
+	width: 25px;	
+	border: 1px solid black;	
+}
+
+.displayed 
+{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom:auto;
+	margin-top: auto;
+}
+
+</style>
+
+
+<div ng-app="campominato" ng-controller="Controller">
+	<center>
+	<br>
+	<br>
+		<button ng-click="mostrabombe()">Mostra Bombe</button>
+		<br>
+		<br>
+		<table>
+			<tr ng-repeat="mini in griglia">
+				<td  ng-repeat="c in mini" ng-click="clicca(c)" ng-right-click="bandiera(c)">	
+						<center>
+								<img class="displayed" style="width:20;height:auto;border-collapse:collapse;" src = "{{c.mostra}}.png">
+						</center>
+				</td>
+			</tr>
+		</table>
+		<br>
+		<button ng-click="gioca()">Nuova Partita</button>
+		<br>
+		<p id="perso"></p>
+	</center>
+</div>

@@ -1,0 +1,13 @@
+<script src="metro.js"></script>
+
+<body onload="start();">
+  <canvas id="map" style="float:left" width="1030" height="1000"></canvas>
+  <div style="float:right">
+	Stazione di partenza: <select id="start"></select>
+	<br>
+	Stazione di arrivo:<select id="destination"></select>
+	<br>
+	<button onClick="stampa(start.value,destination.value)" > Calcola </button>
+	<p id="path"> </p>
+  </div>
+</body>

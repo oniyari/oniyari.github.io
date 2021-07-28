@@ -1,0 +1,49 @@
+.board
+{
+    margin : 0 auto;
+    width : 440px;
+    border : 2px solid black;
+}
+
+.hider
+{
+    position: fixed;
+    width : 437px;
+    height: 64px;
+    left: 550px;
+    top : 11px;
+}
+
+.square
+{
+    position: fixed;
+    width : 150px;
+    height: 150px;
+    left: 1200px;
+    top : 220px;
+    border: 3px solid black;
+    font-family: "Arial";
+    margin: auto;
+    padding:10px; 
+     
+}
+
+.column 
+{
+    height: 33px;
+}
+
+.box
+{
+    float : left;
+    width : 44px;
+    text-align : center;
+    
+}
+
+.block
+{
+    width: 44px;
+    height: 33px;
+    float:left;
+}

@@ -1,0 +1,40 @@
+<script>
+
+	vet = [3 , 4 , 5 , 2 , 4 , 19];
+	
+	testo = "Ecco i tuoi numeri: ";
+	
+	function aggiungi()
+	{
+		vet.push(document.getElementById("numero").value);
+		stampa();
+	}
+	
+	function stampa()
+	{
+		testo = "Ecco i tuoi numeri: ";
+		for(i=0; i<vet.length; i++)
+			testo += vet[i] + " ";
+	
+		document.getElementById("risposta").innerHTML = testo;
+	}
+	
+	function togli()
+	{
+		vet.pop();
+		stampa();
+	}
+	
+</script>
+
+<body>
+	<input type="number" id="numero">
+	<button onClick="aggiungi()">Add</button> 
+	<button onClick="togli()">Togli</button> <br>
+	<button onClick="stampa()">Stampa</button> <br>
+	<div id="risposta"></div>
+</body>
+
+
+
+

@@ -1,0 +1,21 @@
+<script src="angular.min.js"></script>
+<script src="game.js"></script>
+<link rel="stylesheet" href="game.css">
+
+<div ng-app="scacchiapp" ng-controller="scacchictrl">
+	
+
+	<table id="scacchiera">
+		<tr ng-repeat="riga in scacchiera">
+			<td ng-repeat="cella in riga" ng-click="seleziona(cella.x, cella.y)" ng-style="cella.style">
+				<img id="pedina" ng-src="{{cella.val+cella.col}}.png"/>
+			</td>
+		</tr>
+	<table>
+	
+	<br><br>
+	
+	<div class="centrato" >{{scheda()}}</div> 
+	<div class="centrato" > Annulla selezione : <button ng-click="annulla()">Annulla</button> </div>
+	
+</div>

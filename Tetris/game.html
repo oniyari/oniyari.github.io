@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="game.css">
+        <script src="angular.min.js"></script>
+        <script src="game.js"></script>
+    </head>
+    <body ng-app="tetrisapp" ng-controller="tetriscontroller" ng-keypress="key($event)" tabindex="0">
+        
+        
+        <div class="board" ng-show="!pause">
+            <div ng-repeat="column in board" class="column" ng-style="{'background-image':'url(calculateBG())'}">
+                <div ng-repeat="box in column" class="box{{box.y+''+box.x}}">
+                    <img ng-src="{{box.type}}.png" class="block">
+                </div>
+                <br>
+            </div>
+        </div>
+
+        <div class="board" ng-show="pause">
+            <div ng-repeat="column in board" class="column">
+                    <div  ng-repeat="box in column" class="box {{box.y+''+box.x}}">
+                        <img ng-src="empty.png" class="block">
+                    </div>
+                <br>
+            </div>
+        </div>
+
+        <div class="square">
+            Speed : {{speed()}} <br><br>
+            Linee : {{lines}} <br> <br> 
+            Livello : {{level()}}<br> <br>
+            Punteggio : {{points}}
+        </div>
+    </body>
+</html>

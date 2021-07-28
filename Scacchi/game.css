@@ -1,0 +1,26 @@
+#scacchiera {
+	margin-left:auto; 
+    margin-right:auto;
+	background-image : url("chessboard1.jpg");
+	background-size: 400px 400px;
+	height : 400px;
+	width : 400px;
+}
+
+#scacchiera td {
+	text-align : center;
+}
+
+#pedina{
+	 width:40px;
+	 height:40px;
+}
+
+#puntino{
+	 width:40px;
+	 height:40px;
+}
+
+.centrato{
+	text-align:center;
+}
